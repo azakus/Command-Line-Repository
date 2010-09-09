@@ -1,0 +1,36 @@
+Getting Comfortable with the Commandline
+=========================================
+
+1. What is the Command Line
+
+2. Command Line on your machine
+    - Linux: xterm, gnome-terminal
+    - Mac: Terminal.app, xterm
+    - Windows: cygwin
+
+3. Common commandline tools
+    - Easy Tools
+        - echo, mv, cp, rm, ls, cat, mkdir, grep, ssh, less, screen/tmux, sudo, ln (*really just ln -s mostly*), dmesg
+        - output redirection: |, <, >, 2>&1 || 2>/dev/null
+    - Archivers
+        - tar, unzip
+    - Version Control
+        - git, svn
+
+4. Package Managers
+    - dpkg - apt, aptitude
+    - rpm - yum
+    - brew, ports
+    - ./configure and make
+
+6. Programming on the Command Line
+    - shell
+    - man pages
+    - /var/log
+
+7. Tips and Tricks
+    - Ctrl keys
+    - fg, bg, &
+    - aliasing
+    - xclip
+    - davesdots
