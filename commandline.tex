@@ -95,47 +95,53 @@
 \subsection{Easy Tools}
 \begin{frame}[allowframebreaks]{The Easy And Common Tools}
 \begin{itemize}
-\item Echo: Repeats what was typed back out
+\item echo: Repeats what was typed back out
 \codeblockWO{echo "Hello World"}{Hello World}
 
-\item Mv: Moves files from arguments 0 through N-1 to argument N, also used for renaming files
+\item mv: Moves files from arguments 0 through N-1 to argument N, also used for renaming files
 \codeblock{mv samples/file1 hi.txt}
 
-\item Cp: Copies a file from argument 1 to argument 2
+\item cp: Copies a file from argument 1 to argument 2
 \codeblock{cp hi.txt hello.txt}
 
-\item Rm: Removes files specified
+\item rm: Removes files specified
 \codeblock{rm hello.txt}
 
-\item Mkdir: Makes a new directory
+\item mkdir: Makes a new directory
 \codeblock{mkdir newdir}
 
-\item Ls: Lists files in the current directory
+\item ls: Lists files in the current directory
 \codeblockWO{ls}{hi.txt\newline~newdir\newline~samples}
 
-\item Grep: Lists the lines in the specified files that match the given expression
+\item cat: Prints out the contents of a file
+\codeblockWO{cat hi.txt}{Hello There}
+
+\item grep: Lists the lines in the specified files that match the given expression
 \codeblockWO{grep "Hello" hi.txt}{Hello There}
 
-\item Ssh: Remotely log into another machine
+\item ssh: Remotely log into another machine
 \codeblockWO{ssh dfreedm2@yt.acm.uiuc.edu}{\textcolor{gray}{dfreedm2 /home/dfreedm2 \$}}
 
-\item Less: Saves output from a command into a scrollable window
+\item less: Saves output from a command into a scrollable window
 \codeblockWO{less samples/bigfile}{This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.8.27)  11 SEP 2010 17:49\newline~\colorbox{white}{\textcolor{black}{samples/bigfile lines 1-3/1162 0\%}}}
 
-\item Ln: With the '-s' flag, ln can make "symlinks" that provide a pointer to the real location of a file.
+\item ln: With the '-s' flag, ln can make "symlinks" that provide a pointer to the real location of a file.
 \codeblock{ln -s hi.txt pointer}
 
-\item Sudo: Run a command as the 'root', the super user.
+\item sudo: Run a command as the 'root', the super user.
 \codeblockWO{whoami}{sls}
 \codeblockWO{sudo whoami}{root}
 
-\item Dmesg: Print the system log
+\item dmesg: Print the system log
 \codeblockWO{dmesg}{[71012.760576] Initializing CPU\#1\newline
 [71012.760576] CPU: L1 I cache: 32K, L1 D cache: 32K\newline
 [71012.760576] CPU: L2 cache: 3072K\newline
 [71012.760576] CPU 1/0x1 -> Node 0}
 
 \end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Output Redirection}
 \end{frame}
 
 \subsection{Screen}
