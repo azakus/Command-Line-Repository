@@ -120,7 +120,7 @@
 \codeblockWO{grep "Hello" hi.txt}{Hello There}
 
 \item ssh: Remotely log into another machine
-\codeblockWO{ssh dfreedm2@yt.acm.uiuc.edu}{\textcolor{gray}{dfreedm2 /home/dfreedm2 \$}}
+\codeblockWO{ssh dfreedm2@yt.acm.uiuc.edu}{\textcolor{gray}{dfreedm2@yt /home/dfreedm2 \$}}
 
 \item less: Saves output from a command into a scrollable window
 \codeblockWO{less samples/bigfile}{This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.8.27)  11 SEP 2010 17:49\newline~\colorbox{white}{\textcolor{black}{samples/bigfile lines 1-3/1162 0\%}}}
@@ -138,10 +138,28 @@
 [71012.760576] CPU: L2 cache: 3072K\newline
 [71012.760576] CPU 1/0x1 -> Node 0}
 
+\item head: Read only the first $N$ lines from a file. Default $N=20$. Adjustable with the \texttt{-n} flag.
+\codeblockWO{head -n 1}{This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.8.27)  11 SEP 2010 17:53}
+
+\item tail: Read only the last $N$ lines from a file. Default $N=20$. Adjustable with the \texttt{-n} flag.
+\codeblockWO{tail -n 1}{161 words of extra memory for PDF output out of 10000 (max. 10000000)}
+
 \end{itemize}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Output Redirection}
+\begin{frame}{Output Redirection}
+\begin{itemize}
+\item Output Redirection is the ability to move text between applications, directly into files, or directly from files.
+
+\item |: Pipe moves text from the application on the left to the application on the right.
+\codeblock{dmesg | less}
+
+\item >: Redirect output from a program into a file.
+\codeblock{dmesg > log}
+
+\item $<$: Read a file directly into the input of a program.
+\codeblock{tr a-zA-Z $<$ log}
+\end{itemize}
 \end{frame}
 
 \subsection{Screen}
@@ -159,6 +177,9 @@
 \subsection{All Machines}
 
 \section{Programming On The Command-line}
+\subsection{vim}
+\subsection{emacs}
+\subsection{nano}
 
 \section{Tips and Tricks}
 
