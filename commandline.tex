@@ -67,7 +67,7 @@
 
 \section{What Is The Command-Line?}
 \begin{frame}{What Is The Command-Line?}
-  \begin{itemize}[<+->]
+  \begin{itemize}
   \item The command-line is a text based interface to interacting with your computer.
   \item To use the command-line, one enters commands with arguments and hits "Enter" to make the command execute.
   \item More Info on \href{http://en.wikipedia.org/wiki/Command-line\_interface}{\textcolor{blue}{Wikipedia}}
@@ -79,7 +79,7 @@
 
 \subsection{Linux}
 \begin{frame}{Xterm}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item Xterm is best known and most compliant terminal emulator for *nix operating systems.
 \item Terminals created by Gnome, KDE, XFCE, etc. usually wrap xterm to provide support for tabs and copy/paste with keyboard combos.
 \end{itemize}
@@ -87,7 +87,7 @@
 
 \subsection{Mac}
 \begin{frame}{Terminal.app}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item Terminal.app is the default terminal provided by Apple in Mac OS X.
 \item It is very fast, but only supports 8 colors unlike xterm's 256 (useful for syntax highlighting).
 \item Macs can also use xterm by installing X11 and using the provided X11 xterm.
@@ -96,14 +96,14 @@
 
 \subsection{Windows}
 \begin{frame}{Cygwin}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item Cygwin emulates a unix-like terminal on Windows, but allows for Windows style file paths and syntax.
 \item Cygwin requires tools and applications be compiled inside cygwin for compatibility.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{SUA}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item SUA stands for Subsystem for Unix Applications.
 \item SUA is provided by Microsoft as a pure UNIX application layer for Windows, without any compatibility for filepaths or syntax
 \end{itemize}
@@ -185,13 +185,10 @@
 \begin{frame}{Tar}
 \begin{itemize}
 \item Tar is the default compression application in most Unix based OSes.
-\pause
 
 \item Tar is quite complicated, so for the purposes of this talk, we will only discuss extracting and creating archives.
-\pause
 
 \item Tar just concatenates files into one blob, so other helper programs such as gzip and bzip2 are used to compress the blob.
-\pause
 
 \item Creating a tar archive can be done with "tar czvf", which invokes gzip as the compression program
 \codeblockWO{tar czvf tarball.tar.gz hi.txt}{hi.txt}
@@ -205,7 +202,7 @@
 
 \subsection{Linux}
 \begin{frame}{dpkg}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item dpkg is the package management system for Debian based systems.
 \item dpkg is rather barebones, so a good frontend for this system is found in aptitude.
 \item aptitude handles all the package fetching and dependency resolution for you, in a safe and easy way.
@@ -218,7 +215,7 @@
 \end{frame}
 
 \begin{frame}{rpm}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item rpm is the package management system for Red Hat based systems.
 \item yum is the most used frontend for these systems.
 \item \texttt{\color{blue}yum search -C} returns packages that match what you search for.
@@ -230,7 +227,7 @@
 
 \subsection{Mac}
 \begin{frame}{brew}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item Macs do not have a built in package management system as powerful as dpkg, but there are good third party ones.
 \item The most popular/usable is brew.
 \item brew is based on git, which means that you must install git first using the Mac installers
@@ -244,7 +241,7 @@
 
 \subsection{All Machines}
 \begin{frame}{Other}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item If a package you need is not included in brew or your linux repo's repository, you're going to have to build it yourself.
 \item Fortunately, most open source software comes with a standard set of tools to help build the project and install it.
 \item This technique does not handle dependencies, so you'll have to manage those on your own.
@@ -258,7 +255,7 @@
 
 \subsection{Editors}
 \begin{frame}{Editors}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item Commandline editors are loved by some, confusing to most, and the topic of many flamewars.
 \item The two big command line editors are \texttt{\color{blue}vim} and \texttt{\color{blue}emacs}, which are very different and have whole communities behind them.
 \item Another smaller editor is \texttt{\color{blue}nano}, which is less powerful, but more accessible.
@@ -271,7 +268,7 @@
 
 \subsection{screen}
 \begin{frame}{screen}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item screen is a terminal multiplexer, and allows you to have multiple running terminal sessions at once and in the background.
 \item In addition, screen can be used to run commands remotely that can survive terminal disconnects.
 \item screen has many features outside the scope of this talk.
@@ -281,7 +278,7 @@
 
 \subsection{Version Control}
 \begin{frame}{Version Control}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item Version Control systems are vital to correctly maintaining code which multiple people access.
 \item The two major players are \texttt{\color{blue}git} and \texttt{\color{blue}svn}.
 \item The commands for both are near identical, and you'll have \texttt{\color{blue}svn} experience in classes, so we will only cover \texttt{\color{blue}git} here.
@@ -296,7 +293,7 @@
 
 \subsection{Man Pages}
 \begin{frame}{man}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item Man pages are the manuals installed with most applications on the command-line.
 \item To read a man page, just type \texttt{\color{blue}man} followed by the program name to launch it's manual.
 \item Man pages exist for everything from trivial programs to language functions and libraries.
@@ -305,7 +302,7 @@
 
 \subsection{Shell}
 \begin{frame}{Shell}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item Shell is a programming language purpose built to patch together the output from applications.
 \item It is a very lightweight language with only a few keywords.
 \item \texttt{\color{blue}man sh} should give you all the syntax.
