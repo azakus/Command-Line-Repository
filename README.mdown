@@ -10,27 +10,27 @@ Getting Comfortable with the Commandline
 
 3. Common commandline tools
     - Easy Tools
-        - echo, mv, cp, rm, ls, cat, mkdir, grep, ssh, less, screen/tmux, sudo, ln (*really just ln -s mostly*), dmesg
-        - output redirection: |, <, >, 2>&1 || 2>/dev/null
+        - echo, mv, cp, rm, ls, cat, mkdir, grep, ssh, less, sudo, ln (*really just ln -s mostly*), dmesg, head, tail
+        - output redirection: |, <, >
     - Archivers
-        - tar, unzip
-    - Version Control
-        - git, svn
+        - tar create and extract
 
 4. Package Managers
-    - dpkg - apt, aptitude
+    - dpkg - aptitude
     - rpm - yum
-    - brew, ports
+    - brew
     - ./configure and make
 
-6. Programming on the Command Line
-    - shell
+5. Programming on the Command Line
+    - Editors: vim, emacs, nano
+    - screen
+    - Version Control: git, svn
     - man pages
-    - /var/log
+    - shell
 
-7. Tips and Tricks
+6. Tips and Tricks
     - Ctrl keys
     - fg, bg, &
-    - aliasing
     - xclip
-    - davesdots
+
+7. Q/A
