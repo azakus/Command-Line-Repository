@@ -9,6 +9,22 @@
 \usepackage{hyperref}
 \usepackage{listings}
 
+\definecolor{mygray}{rgb}{0.95,0.95,0.95}
+\definecolor{mygreen}{rgb}{0.0,0.5,0.0}
+
+\lstset{
+       language=sh,
+       numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt,
+       basicstyle=\color{black}\ttfamily\small,
+       commentstyle=\color{mygreen}\ttfamily,
+       keywordstyle=\color{blue}\ttfamily,
+       stringstyle=\color{red}\ttfamily,
+       showstringspaces=false,
+       backgroundcolor=\color{mygray},
+       breaklines,
+       frame=single,
+}
+
 % defines a "codeblock" with command
 \newcommand{\codeblock}[1]
 {
@@ -38,12 +54,14 @@
 
 \date[September 14th, 2010]
 
+\AtBeginSection[]{\begin{frame}[shrink]{Outline}\tableofcontents[currentsection]\end{frame}}
+
 \begin{document}
 \begin{frame}
   \titlepage
 \end{frame}
 
-\begin{frame}{Outline}
+\begin{frame}[shrink]{Outline}
   \tableofcontents
 \end{frame}
 
@@ -158,30 +176,150 @@
 \codeblock{dmesg > log}
 
 \item $<$: Read a file directly into the input of a program.
-\codeblock{tr a-zA-Z $<$ log}
+\codeblock{tr a-zA-Z $\texttt{<}$ log}
 \end{itemize}
 \end{frame}
 
-\subsection{Screen}
-
 \subsection{Archivers}
+\begin{frame}{Tar}
+\begin{itemize}
+\item Tar is the default compression application in most Unix based OSes.
+\pause
 
-\subsection{Version Control}
+\item Tar is quite complicated, so for the purposes of this talk, we will only discuss extracting and creating archives.
+\pause
+
+\item Tar just concatinates files into one blob, so other helper programs such as gzip and bzip2 are used to compress the blob.
+\pause
+
+\item Creating a tar archive can be done with "tar czvf", which invokes gzip as the compression program
+\codeblockWO{tar czvf tarball.tar.gz hi.txt}{hi.txt}
+
+\item Extracting an archive can be done with "tar xvf", which automatically picks the compression program to use for decompression \textit{on most machines}.
+\codeblockWO{tar xvf tarball.tar.gz}{hi.txt}
+\end{itemize}
+\end{frame}
 
 \section{Package Managers}
 
 \subsection{Linux}
+\begin{frame}{dpkg}
+\begin{itemize}[<+->]
+\item dpkg is the package management system for Debian based systems.
+\item dpkg is rather barebones, so a good frontend for this system is found in aptitude.
+\item aptitude handles all the package fetching and dependancy resolution for you, in a safe and easy way.
+\item \texttt{\color{blue}aptitude search} returns packages that match what you search for.
+\item \texttt{\color{blue}aptitude install} will install the package, and install all dependencies.
+\item \texttt{\color{blue}aptitude update} will pull update the package listings from the server, and alert you to new updates.
+\item \texttt{\color{blue}aptitude safe-upgrade} will try to safely upgrade all the packages.
+\item Other uses exist, but read the man page.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{rpm}
+\begin{itemize}[<+->]
+\item rpm is the package management system for Red Hat based systems.
+\item yum is the most used frontend for these systems.
+\item \texttt{\color{blue}yum search -C} returns packages that match what you search for.
+\item \texttt{\color{blue}yum install} will install the package, and install all dependencies.
+\item \texttt{\color{blue}yum update} will pull update the package listings from the server, and alert you to new updates.
+\item \texttt{\color{blue}yum upgrade} will try to safely upgrade all the packages.
+\end{itemize}
+\end{frame}
 
 \subsection{Mac}
+\begin{frame}{brew}
+\begin{itemize}[<+->]
+\item Macs do not have a built in package management system as powerful as dpkg, but there are good third party ones.
+\item The most popular/usable is brew.
+\item brew is based on git, which means that you must install git first using the Mac installers
+\item Just follow the \href{http://help.github.com/mac-git-installation/}{\color{blue}Guide to Installing Git}.
+\item \texttt{\color{blue}brew search} returns packages that match your search terms.
+\item \texttt{\color{blue}brew install} fetchs, compiles, and installs a package.
+\item \texttt{\color{blue}brew outdated} returns which packages are outdated.
+\item \texttt{\color{blue}brew install \$(brew oudated)} upgrades outdated pacakges.
+\end{itemize}
+\end{frame}
 
 \subsection{All Machines}
+\begin{frame}{Other}
+\begin{itemize}[<+->]
+\item If a package you need is not included in brew or your linux repo's repository, you're going to have to build it yourself.
+\item Fortunately, most open source software comes with a standard set of tools to help build the project and install it.
+\item This technique does not handle dependencies, so you'll have to manage those on your own.
+\item \texttt{\color{blue}configure} is a script that automatically checks if you have the required libraries installed and sets up the Makefile.
+\item Assuming all went well, \texttt{\color{blue}make} will read the Makefile and compile the code.
+\item \texttt{\color{blue}make install} will then install the code into the right spot.
+\end{itemize}
+\end{frame}
 
 \section{Programming On The Command-line}
-\subsection{vim}
-\subsection{emacs}
-\subsection{nano}
+
+\subsection{Editors}
+\begin{frame}{Editors}
+\begin{itemize}[<+->]
+\item Commandline editors are loved by some, confusing to most, and the topic of many flamewars.
+\item The two big command line editors are \texttt{vim} and \texttt{emacs}, which are very different and have whole communities behind them.
+\item Another smaller editor is \texttt{nano}, which is less powerful, but more accessible.
+\item These two editors are so vast that they quickly fall out of the scope of this talk, but you can learn more about them from the links below.
+\item Vim: \url{http://www.vim.org}.
+\item Emacs: \url{http://www.gnu.org/software/emacs/}.
+\item Nano: \url{http://www.nano-editor.org/}.
+\end{itemize}
+\end{frame}
+
+\subsection{screen}
+\begin{frame}{screen}
+\begin{itemize}[<+->]
+\item screen is a terminal multiplexer, and allows you to have multiple running terminal sessions at once and in the background.
+\item In addition, screen can be used to run commands remotely that can survive terminal disconnects.
+\item screen has many features outside the scope of this talk.
+\item More info can be found on the homepage: \url{http://www.gnu.org/software/screen/}.
+\end{itemize}
+\end{frame}
+
+\subsection{Version Control}
+\begin{frame}{Version Control}
+\begin{itemize}[<+->]
+\item Version Control systems are vital to correctly maintaining code which multiple people access.
+\item The two major players are \texttt{git} and \texttt{svn}.
+\item The commands for both are near identical, and you'll have \texttt{svn} experience in classes, so we will only cover \texttt{git} here.
+\end{itemize}
+\end{frame}
+
+\subsection{Man Pages}
+\begin{frame}{man}
+\begin{itemize}[<+->]
+\item Man pages are the manuals installed with most applications on the command-line.
+\item To read a man page, just type \texttt{man} followed by the program name to launch it's manual.
+\item Man pages exist for everything from trivial programs to language functions and libraries.
+\end{itemize}
+\end{frame}
+
+\subsection{Shell}
+\begin{frame}{Shell}
+\begin{itemize}[<+->]
+\item Shell is a programming language purpose built to patch together the output from applications.
+\item It is a very lightweight language with only a few keywords.
+\item \texttt{man sh} should give you all the syntax.
+\item Commands wrapped with \texttt{\$(COMMAND)} return the output of that command.
+\item How would you get the total size of a directory? \tiny{du -b gives size in bytes}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example Program}
+\lstinputlisting{cmdline/samples/sample.sh}
+\end{frame}
 
 \section{Tips and Tricks}
+\begin{frame}{Tips and Tricks}
+\begin{itemize}
+\item xclip can put text into and out of the copy/paste buffer.
+\item Ctrl-a goes to front of line, Ctrl-e goes to end of line.
+\item Ctrl-u clears a whole line, Ctrl-k clears a line from the cursor onwards.
+\item Invoking a command with a & afterwards will run it in the background.
+\end{itemize}
+\end{frame}
 
 \section{QA}
 \begin{frame}{QA time}
