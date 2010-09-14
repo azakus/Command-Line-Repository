@@ -256,8 +256,8 @@
 \begin{frame}{Editors}
 \begin{itemize}[<+->]
 \item Commandline editors are loved by some, confusing to most, and the topic of many flamewars.
-\item The two big command line editors are \texttt{vim} and \texttt{emacs}, which are very different and have whole communities behind them.
-\item Another smaller editor is \texttt{nano}, which is less powerful, but more accessible.
+\item The two big command line editors are \texttt{\color{blue}vim} and \texttt{\color{blue}emacs}, which are very different and have whole communities behind them.
+\item Another smaller editor is \texttt{\color{blue}nano}, which is less powerful, but more accessible.
 \item These two editors are so vast that they quickly fall out of the scope of this talk, but you can learn more about them from the links below.
 \item Vim: \url{http://www.vim.org}.
 \item Emacs: \url{http://www.gnu.org/software/emacs/}.
@@ -279,8 +279,14 @@
 \begin{frame}{Version Control}
 \begin{itemize}[<+->]
 \item Version Control systems are vital to correctly maintaining code which multiple people access.
-\item The two major players are \texttt{git} and \texttt{svn}.
-\item The commands for both are near identical, and you'll have \texttt{svn} experience in classes, so we will only cover \texttt{git} here.
+\item The two major players are \texttt{\color{blue}git} and \texttt{\color{blue}svn}.
+\item The commands for both are near identical, and you'll have \texttt{\color{blue}svn} experience in classes, so we will only cover \texttt{\color{blue}git} here.
+\item \texttt{\color{blue}git clone git://github.com/azakus/Command-Line-Repository.git} will clone the repository that contains this talk.
+\item Now create a file with your name in it called name.txt.
+\item \texttt{\color{blue}git add name.txt} will tell git to add the file's changes to the repo.
+\item \texttt{\color{blue}git commit} will then commit the changes to the repo.
+\item \texttt{\color{blue}git log} will show you that you commited the file to the repo!
+\item \href{http://www.sourcemage.org/Git\_Guide}{\color{blue}SourceMage} has a rather useful guide to beginning, intermediate, and advanced \texttt{git} useage.
 \end{itemize}
 \end{frame}
 
@@ -288,7 +294,7 @@
 \begin{frame}{man}
 \begin{itemize}[<+->]
 \item Man pages are the manuals installed with most applications on the command-line.
-\item To read a man page, just type \texttt{man} followed by the program name to launch it's manual.
+\item To read a man page, just type \texttt{\color{blue}man} followed by the program name to launch it's manual.
 \item Man pages exist for everything from trivial programs to language functions and libraries.
 \end{itemize}
 \end{frame}
@@ -298,7 +304,7 @@
 \begin{itemize}[<+->]
 \item Shell is a programming language purpose built to patch together the output from applications.
 \item It is a very lightweight language with only a few keywords.
-\item \texttt{man sh} should give you all the syntax.
+\item \texttt{\color{blue}man sh} should give you all the syntax.
 \item Commands wrapped with \texttt{\$(COMMAND)} return the output of that command.
 \item How would you get the total size of a directory? \tiny{du -b gives size in bytes}.
 \end{itemize}
@@ -306,6 +312,7 @@
 
 \begin{frame}{Example Program}
 \lstinputlisting{cmdline/samples/sample.sh}
+This is also known as \texttt{\color{blue}du -s}.
 \end{frame}
 
 \section{Tips and Tricks}
@@ -314,6 +321,7 @@
 \item xclip can put text into and out of the copy/paste buffer.
 \item Ctrl-a goes to front of line, Ctrl-e goes to end of line.
 \item Ctrl-u clears a whole line, Ctrl-k clears a line from the cursor onwards.
+\item Ctrl-w removes a word from the line.
 \item Invoking a command with a \& afterwards will run it in the background.
 \end{itemize}
 \end{frame}
