@@ -186,7 +186,7 @@
 \item Tar is quite complicated, so for the purposes of this talk, we will only discuss extracting and creating archives.
 \pause
 
-\item Tar just concatinates files into one blob, so other helper programs such as gzip and bzip2 are used to compress the blob.
+\item Tar just concatenates files into one blob, so other helper programs such as gzip and bzip2 are used to compress the blob.
 \pause
 
 \item Creating a tar archive can be done with "tar czvf", which invokes gzip as the compression program
@@ -204,7 +204,7 @@
 \begin{itemize}[<+->]
 \item dpkg is the package management system for Debian based systems.
 \item dpkg is rather barebones, so a good frontend for this system is found in aptitude.
-\item aptitude handles all the package fetching and dependancy resolution for you, in a safe and easy way.
+\item aptitude handles all the package fetching and dependency resolution for you, in a safe and easy way.
 \item \texttt{\color{blue}aptitude search} returns packages that match what you search for.
 \item \texttt{\color{blue}aptitude install} will install the package, and install all dependencies.
 \item \texttt{\color{blue}aptitude update} will pull update the package listings from the server, and alert you to new updates.
@@ -234,7 +234,7 @@
 \item \texttt{\color{blue}brew search} returns packages that match your search terms.
 \item \texttt{\color{blue}brew install} fetchs, compiles, and installs a package.
 \item \texttt{\color{blue}brew outdated} returns which packages are outdated.
-\item \texttt{\color{blue}brew install \$(brew oudated)} upgrades outdated pacakges.
+\item \texttt{\color{blue}brew install \$(brew outdated)} upgrades outdated packages.
 \end{itemize}
 \end{frame}
 
