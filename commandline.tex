@@ -49,8 +49,8 @@
 
 \AtBeginSection[]{\begin{frame}[shrink]{Outline}\tableofcontents[currentsection]\end{frame}}
 
-\title[Getting Comfortable With the command-line]
-{Getting Comfortable With the command-line}
+\title[Getting Comfortable With The Command-Line]
+{Getting Comfortable With The Command-Line}
 
 \author[ACM Student Lecture Series]{Daniel~Freedman}
 
@@ -71,7 +71,6 @@
   \item The command-line is a text based interface to interacting with your computer.
   \item To use the command-line, one enters commands with arguments and hits "Enter" to make the command execute.
   \item More Info on \href{http://en.wikipedia.org/wiki/Command-line\_interface}{\textcolor{blue}{Wikipedia}}
-  \item At this time, go ahead and download the bundle to follow along: \url{http://www.acm.uiuc.edu/~dfreedm2/cmdline.tar.gz}
   \end{itemize}
 \end{frame}
 
@@ -109,11 +108,25 @@
 \end{itemize}
 \end{frame}
 
+\section{Getting Started}
+\begin{frame}{Getting Started}
+\begin{itemize}
+  \item At this time, go ahead and download the bundle to follow along: \url{http://www.acm.uiuc.edu/~dfreedm2/cmdline.tar.gz}
+  \item Locate the terminal application on your system. If you run windows, you should try to connect to a linux machine. Raise your hand and we'll help you out.
+  \item Open the terminal and invoke this command, we'll discuss later what it means.
+  \codeblock{tar xvf cmdline.tar.gz}
+  \item Now you can follow along with the rest of the slides.
+\end{itemize}
+\end{frame}
+
 \section{Common Command-line Tools}
 
 \subsection{Easy Tools}
 \begin{frame}[allowframebreaks]{The Easy And Common Tools}
 \begin{itemize}
+\item cd: Change current directory
+\codeblock{cd cmdline}
+
 \item echo: Repeats what was typed back out
 \codeblockWO{echo "Hello World"}{Hello World}
 
